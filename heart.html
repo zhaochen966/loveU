@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>美玲</title></title>
+<link rel="icon" type="image/x-icon" href="./img/heart.png">
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+
+<link href="./css/heart.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="./js/jquery.js"></script>
+<script type="text/javascript" src="./js/garden.js"></script>
+<script type="text/javascript" src="./js/heart.js"></script>
+
+</head>
+
+<body>
+<div style="text-align:center;clear:both;">
+</div>
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">/**</span><br />
+			<span class="space"/><span class="comments">* @author Zhaochen</span><br />
+			<span class="space"/><span class="comments" id="spaceDate">* @since 2024/06/10 </span><br />
+			<span class="space"/><span class="comments">*/</span><br />
+			<span class="keyword">亲爱的</span> 美玲<br />
+			<span class="comments">我知道你是一个十全十美的女孩，真的希望自己能够配得上你。</span><br />
+			<span class="comments">现在你已经点了“好”按钮，说明已经给我机会了，好开心😊</span><br />
+			<span class="comments">喜欢一个人需要勇气，更需要真诚。所以，我在这里，鼓足所有的勇气，向你表白我真诚的心意。</span><br />
+			<br />
+			<span class="placeholder"/><span class="comments">我心炽热如火焰，</span><br/>
+			<span class="placeholder"/><span class="comments">要誓真爱永不变。</span><br/>
+			<span class="placeholder"/><span class="comments">追梦千里寻佳人，</span><br/>
+			<span class="placeholder"/><span class="comments">夏日微风送情绵。</span><br/>
+			<span class="placeholder"/><span class="comments">美景良辰心已醉，</span><br/>
+			<span class="placeholder"/><span class="comments">玲珑剔透心相牵。</span><br/>
+			<br>
+			<br>
+			我想对你说:<br />
+			美玲，吾对你蛮有意思滴（南京话），俺欢意你（徐州话）。
+			I love you.How about upgrading to a boyfriend-girlfriend relationship? <br />
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					与你相遇 好幸运 认识你已经
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					直到遇见了你我才知道什么是喜欢<br/>
+					<div class="signature">—— 赵宸</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+// 设置当天的时间
+//$("#spaceDate").append(new Date().toLocaleDateString());
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+// 认识的时间，月份从0开始
+var together = new Date();
+together.setFullYear(2024, 5, 10);
+together.setHours(15); // 2024-06-10 15点见面认识的
+together.setMinutes(0);
+together.setSeconds(0);
+together.setMilliseconds(0);
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+
+</body>
+</html>
